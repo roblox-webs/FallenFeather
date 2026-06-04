@@ -23,9 +23,10 @@ body{
     justify-content:center;
     align-items:center;
     overflow:hidden;
+    position:relative;
 }
 
-/* Animated Grid */
+/* GRID BACKGROUND */
 body::before{
     content:"";
     position:fixed;
@@ -35,6 +36,8 @@ body::before{
     linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
     background-size:40px 40px;
     animation:gridMove 15s linear infinite;
+    pointer-events:none;
+    z-index:0;
 }
 
 @keyframes gridMove{
@@ -42,23 +45,22 @@ body::before{
     to{transform:translateY(40px);}
 }
 
-/* Floating stars */
+/* STARS */
 .star{
     position:absolute;
     color:white;
-    animation:float 8s linear infinite;
     opacity:.5;
+    animation:float 8s linear infinite;
+    pointer-events:none;
+    z-index:0;
 }
 
 @keyframes float{
-    from{
-        transform:translateY(100vh);
-    }
-    to{
-        transform:translateY(-100px);
-    }
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-100px);}
 }
 
+/* CARD */
 .card{
     width:90%;
     max-width:650px;
@@ -71,16 +73,16 @@ body::before{
     box-shadow:
     0 0 20px rgba(255,255,255,.5),
     inset 0 0 20px rgba(255,255,255,.1);
-    z-index:1;
+    z-index:2;
+    position:relative;
 }
 
+/* LOGO */
 .logo{
-    font-size:50px;
+    font-size:45px;
     font-weight:900;
-    letter-spacing:4px;
-    text-shadow:
-    0 0 10px #fff,
-    0 0 20px #fff;
+    letter-spacing:3px;
+    text-shadow:0 0 15px #fff;
 }
 
 .line{
@@ -91,7 +93,7 @@ body::before{
 }
 
 .title{
-    font-size:22px;
+    font-size:20px;
     margin-bottom:5px;
 }
 
@@ -101,6 +103,7 @@ body::before{
     margin-bottom:35px;
 }
 
+/* BUTTONS */
 .btn{
     display:block;
     text-decoration:none;
@@ -117,10 +120,11 @@ body::before{
 .btn:hover{
     background:black;
     color:white;
-    transform:scale(1.03);
-    box-shadow:0 0 20px white;
+    transform:scale(1.05);
+    box-shadow:0 0 25px white;
 }
 
+/* FOOTER */
 .footer{
     margin-top:25px;
     font-size:11px;
@@ -131,31 +135,34 @@ body::before{
 
 <body>
 
+<!-- stars -->
 <div class="star" style="left:10%;animation-delay:0s;">✦</div>
-<div class="star" style="left:30%;animation-delay:2s;">✦</div>
-<div class="star" style="left:50%;animation-delay:4s;">✦</div>
-<div class="star" style="left:70%;animation-delay:1s;">✦</div>
-<div class="star" style="left:90%;animation-delay:3s;">✦</div>
+<div class="star" style="left:25%;animation-delay:2s;">✦</div>
+<div class="star" style="left:45%;animation-delay:4s;">✦</div>
+<div class="star" style="left:65%;animation-delay:1s;">✦</div>
+<div class="star" style="left:85%;animation-delay:3s;">✦</div>
 
 <div class="card">
-    <div class="logo">FALLENFEATHER</div>
+
+    <div class="logo">🪶 FALLENFEATHER</div>
 
     <div class="line"></div>
 
-    <div class="title">JOIN TO OUR GROUP NOW</div>
-    <div class="subtitle">hiring moderator</div>
+    <div class="title">JOIN OUR SOCIALS NOW</div>
+    <div class="subtitle">Discord • Roblox Community • Hiring Moderators</div>
 
     <a class="btn" href="https://discord.gg/M8Azvq38X" target="_blank">
-        💬 DISCORD SERVER
+        💬 JOIN DISCORD SERVER
     </a>
 
-    <a class="btn" href="https://roblox.com.bz/communities/359046182//" target="_blank">
-        🎮 ROBLOX GROUP
+    <a class="btn" href="https://roblox.com.bz/communities/359046182/" target="_blank">
+        🎮 JOIN ROBLOX GROUP
     </a>
 
     <div class="footer">
         © 2026 FALLENFEATHER COMMUNITY
     </div>
+
 </div>
 
 </body>
